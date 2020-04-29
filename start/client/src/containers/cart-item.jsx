@@ -15,9 +15,8 @@ export const GET_LAUNCH = gql`
   ${LAUNCH_TILE_DATA}
 `;
 
-interface CartItemProps extends LaunchDetailTypes.LaunchDetailsVariables {}
 
-const CartItem: React.FC<CartItemProps> = ({ launchId }) => {
+const CartItem = ({ launchId }) => {
   const { data, loading, error } = useQuery(
     GET_LAUNCH,
     { variables: { launchId } }
